@@ -1,0 +1,543 @@
+html{
+    height: 100%;
+}
+a{
+    cursor: pointer;
+}
+.row{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.container{
+    padding: 0px;
+}
+.navbar{
+    margin-top: 20px;
+    border: solid 1px;
+    border-color: #248FBD;
+    border-radius: 15px;
+    background-color: white;
+}
+.form-inline .btn-outline-success{
+    color: #248FBD;
+    border-color: #248FBD;
+}
+.form-inline .btn-outline-success:hover{
+    cursor: pointer;
+    background-color: #248FBD;
+    color: white;
+}
+.collapse .navbar-collapse .navbar-nav .nav-item{
+    color: #248FBD;
+
+}
+
+.nav-item:hover{
+    background-color: #248FBD;
+
+}
+.navbar-nav .nav-link{
+    color: #248FBD;
+}
+.navbar-nav .nav-link:hover {
+    color: #fff;
+}
+.navbar-light{
+    color: #248FBD;
+}
+
+.jumbotron{
+    background: url("../img/pozadina3.jpg") no-repeat;
+    background-size: cover;
+    height: 300px;
+    background-attachment: fixed;
+    width:100%;
+    border-radius: 0px;
+}
+#footer{
+    height: 200px;
+    margin-top: 50px;
+    padding: 0px;
+    margin-bottom: 0px; 
+}
+
+.list-group .list-group-item{
+    background-color: #fff;
+    color: #248FBD;
+}
+.list-group .list-group-item:hover{
+    background-color: #248FBD;
+    color: #fff;
+}
+#active{
+    background-color: #248FBD;
+    border-color: #248FBD;
+    color: #fff;
+}
+#active2{
+    background-color: #248FBD;
+    border-color: #248FBD;
+    color: #fff;
+}
+
+.btn-primary{
+    border-color: #248FBD;
+    background-color: #248FBD;
+    color: #fff;
+}
+.btn-primary:hover{
+    cursor: pointer;
+    border-color: #248FBD;
+    background-color: #fff;
+    color: #248FBD;
+}
+.nesto{
+    color: #248FBD;
+}
+
+.table-responsive.table-bordered{
+    padding-left: 0px;
+    padding-right: 15px;
+
+}
+.navbar-light .navbar-nav .nav-link{
+    color: #248FBD;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #fff;
+}
+.card-header{
+    border-color: #989CA3;
+}
+.mb-0 a{
+    color: #248FBD;
+}
+#accordion{
+    margin-bottom: 150px;
+}
+#accordion2{
+    margin-bottom: 50px;
+}
+#naslov{
+    margin-bottom: 50px;
+}
+.form-inline{
+    margin-bottom: 50px;
+}
+#profil{
+    width: 150px;
+    height: 150px;
+}
+.thumbnail{
+    margin-bottom: 30px;
+    padding: 20px;
+    border: solid 1px;
+    border-color: #248FBD;
+    border-radius: 15px;
+}
+.img{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    height: 150px; 
+    width: 150px; 
+    display: block;
+}
+.ime{
+    text-align: center;
+}
+.bla{
+    margin-bottom: 50px;
+    position: absolute;
+    width: 400px;
+    height: 737px;
+    background-image: url("../img/zubici.jpg");
+}
+.dolejedan{
+    width: 30px;
+    width: 30px;
+    position: relative;
+    left: 345px;
+    top: 400px;
+}
+.doledva{
+    width: 30px;
+    position: relative;
+    left: 335px;
+    top: 430px;
+}
+.doletri{
+    width: 30px;
+    position: relative;
+    left: 325px;
+    top: 465px;
+}
+.dolecetiri{
+    width: 30px;
+    position: relative;
+    left: 315px;
+    top: 490px;
+}
+.dolepet{
+    width: 30px;
+    position: relative;
+    left: 303px;
+    top: 507px;
+}
+.dolesest{
+    width: 30px;
+    position: relative;
+    left: 285px;
+    top: 520px;
+}
+.dolesedam{
+    width: 30px;
+    position: relative;
+    left: 257px;
+    top: 517px;
+}
+.doleosam{
+    width: 30px;
+    position: relative;
+    left: 217px;
+    top: 503px;
+}
+.doledevet{
+    width: 30px;
+    position: relative;
+    left: 169px;
+    top: 478px;
+}
+
+.doledeset{
+    width: 30px;
+    position: relative;
+    left: 130px;
+    top: 440px;
+}
+.dolejedanaest{
+    width: 30px;
+    position: relative;
+    left: 102px;
+    top: 390px;
+}
+.doledvanaest{
+    width: 30px;
+    position: relative;
+    left: 82px;
+    top: 327px;
+}
+.doletrinaest{
+    width: 30px;
+    position: relative;
+    left: 68px;
+    top: 260px;
+}
+.dolecetrnaest{
+    width: 30px;
+    position: relative;
+    left: 58px;
+    top: 182px;
+}
+.dolepetnaest{
+    width: 30px;
+    position: relative;
+    left: 46px;
+    top: 94px;
+}
+.dolesesnaest{
+    width: 30px;
+    position: relative;
+    left: 38px;
+    top: 12px;
+}
+
+.jedan{
+    width: 30px;
+    position: relative;
+    left: 345px;
+    top: -100px;
+}
+.dva{
+    width: 30px;
+    position: relative;
+    left: 335px;
+    top: -180px;
+}
+.tri{
+    width: 30px;
+    position: relative;
+    left: 325px;
+    top: -265px;
+}
+.cetiri{
+    width: 30px;
+    position: relative;
+    left: 315px;
+    top: -345px;
+}
+.pet{
+    width: 30px;
+    position: relative;
+    left: 300px;
+    top: -415px;
+}
+.sest{
+    width: 30px;
+    position: relative;
+    left: 281px;
+    top: -480px;
+}
+.sedam{
+    width: 30px;
+    position: relative;
+    left: 252px;
+    top: -528px;
+}
+.osam{
+    width: 30px;
+    position: relative;
+    left: 210px;
+    top: -565px;
+}
+.devet{
+    width: 30px;
+    position: relative;
+    left: 166px;
+    top: -591px;
+}
+
+.deset{
+    width: 30px;
+    position: relative;
+    left: 127px;
+    top: -603px;
+}
+.jedanaest{
+    width: 30px;
+    position: relative;
+    left: 100px;
+    top: -607px;
+}
+.dvanaest{
+    width: 30px;
+    position: relative;
+    left: 80px;
+    top: -594px;
+}
+.trinaest{
+    width: 30px;
+    position: relative;
+    left: 67px;
+    top: -578px;
+}
+.cetrnaest{
+    width: 30px;
+    position: relative;
+    left: 56px;
+    top: -550px;
+}
+.petnaest{
+    width: 30px;
+    position: relative;
+    left: 46px;
+    top: -518px;
+}
+.sesnaest{
+    width: 30px;
+    position: relative;
+    left: 38px;
+    top: -488px;
+}
+.potvrda{
+    width: 150px;
+    height: 100px;
+    position: relative;
+    left: 140px;
+    top: -478px;
+    border-color: #248FBD;
+    border-radius: 15px;
+}
+.dugmePotvrda{
+    padding: 10px;
+    background-color: white;
+    border: solid 1px;
+    border-color: #248FBD;
+    border-radius: 10px;
+    color: #248FBD;
+}
+.dugmePotvrda:hover{
+    cursor: pointer;
+    padding: 10px;
+    background-color: #248FBD;
+    border-color: #248FBD;
+    border-radius: 10px;
+    color: white;
+
+}
+
+.check{
+    width: 20px;
+    height: 20px;
+}
+.check2{
+    width: 15px;
+    height: 15px;
+}
+.blabla{
+    margin-bottom: 50px;
+    height: 730px;
+    width: 400px;
+}
+#pacijent{
+    margin-bottom: 20px;
+}
+.zubi{
+    border: solid 1px;
+    border-color: #248FBD;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-right: 5px;	
+    overflow-y:scroll; 
+    width: 300px; 
+    height:200px
+
+}
+.btn .btn-outline-success{
+    cursor: pointer;
+}
+.btn-outline-success{
+    cursor: pointer;
+}
+.btn{
+    cursor: pointer;
+}
+.sss{
+    margin-bottom: 10px;
+}
+.vilica1{
+    font-size: 55px;
+    position: relative;
+    left: -10px;
+    top: -188px;
+    width: 30px;
+}
+.vilica2{
+    font-size: 55px;
+    position: relative;
+    left: 105px;
+    top: -256px;
+    width: 30px;
+}
+.vilica3{
+    font-size: 55px;
+    position: relative;
+    left: -10px;
+    top: -78px;
+    width: 30px;
+}
+.vilica4{
+    font-size: 55px;
+    position: relative;
+    left: 105px;
+    top: -145px;
+    width: 30px;
+}
+#odjava:hover{
+    background-color: #C9302C;
+}
+.oPacijentu{
+    margin-left: 20px;
+}
+.btn-warning:hover{
+    cursor: pointer;
+}
+.razmak{
+    margin-bottom: 50px;
+}
+#login {
+
+    margin: 0 auto;
+    width: 50%;
+    position: relative;
+    top:50%;
+    transform: translateY(50%);
+    text-align: center;
+}
+#login .form-wrap {
+    margin: 0 auto;
+}
+.form-wrap{
+    margin: 0 auto;
+    text-align: center;
+
+}
+#login h1 {
+    color: #248FBD;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+#login .form-group {
+    margin-bottom: 25px;
+}
+#login .checkbox .label {
+    color: #6d6d6d;
+    font-size: 13px;
+    font-weight: normal;
+}
+#login .btn.btn-custom {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+#login .forget {
+    font-size: 13px;
+    text-align: center;
+    display: block;
+}
+
+.form-control {
+    color: #212121;
+}
+.btn-custom {
+    color: #fff;
+    background-color: #248FBD;
+}
+.btn-custom:hover,
+.btn-custom:focus {
+    cursor: pointer;
+    color: #fff;
+}
+#pocetna {
+    padding-bottom: 15px;
+    margin: 0 auto;
+}
+.desno{
+    text-align: right;
+}
+#dole{
+    margin-bottom: 200px;
+}
+.goree{
+
+}
+.dolee{
+    margin-top: 100px;
+}
+button{
+    cursor: pointer;
+}
+.naslov-ukloni{
+    margin-bottom: 50px;
+}
+.artcl{
+    background-color: red;
+}
+
+.adminlogin{
+    color: #248FBD;
+}
+#tableheight{
+    height: 600px;
+    width: 100%;
+}

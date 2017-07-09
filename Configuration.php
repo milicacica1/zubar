@@ -1,0 +1,14 @@
+<?php
+
+final class Configuration {
+
+    const DB_HOST = 'localhost';
+    const DB_USER = 'root';
+    const DB_PASS = '';
+    const DB_BASE = 'singident';
+    
+    const BASE_PATH = '/zubar/';
+    const BASE_URL = 'http://localhost' . Configuration::BASE_PATH;
+    const USER_SALT = '0896086hgodfhgouhy98ugodfgodfhgu54hy98yugobrg';
+
+}
