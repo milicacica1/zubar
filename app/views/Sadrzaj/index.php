@@ -34,7 +34,7 @@
                 <tr>
                     <th scope="row">
                         <?php echo $listaUslugaPoKateoriji->naziv;?><br>
-                        <a style="cursor: pointer;" class="btn btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#myModal<?php echo htmlspecialchars($listaUslugaPoKateoriji->usluga_id);?>">Opis</a>
+                        <a class="btn btn btn-outline-warning btn-sm" data-toggle="modal" data-target="#myModal<?php echo htmlspecialchars($listaUslugaPoKateoriji->usluga_id);?>">Opis</a>
                         <div class="modal fade" id="myModal<?php echo htmlspecialchars($listaUslugaPoKateoriji->usluga_id);?>" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog" id="<?php echo htmlspecialchars($listaUslugaPoKateoriji->usluga_id);?>">
                                 <div class="modal-content">

@@ -111,7 +111,7 @@
             //foreach ($_POST['check_list'] as $checkbox) :
                 //PregledModel::setZubi($checkbox);
                 //$this->setDa
-                ?><div class="zubi col-lg-6" style="height: 700px;">
+                ?><div class="zubi col-lg-6">
                     <form method="post" action="<?php echo Configuration::BASE_URL; ?>racun/<?php echo $DATA['pacijent']->pacijent_id ?>"">
         <?php           foreach ($_POST['check_list'] as $checkbox) :
             ?>
