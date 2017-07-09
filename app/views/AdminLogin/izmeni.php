@@ -3,7 +3,7 @@
 
 <article class="container">
     <h2>Izmena podataka o pacijentu</h2>
-    <form method="post" action="<?php echo Configuration::BASE_URL; ?>pacijent/izmeni/<?php echo $DATA['zubar']->pacijent_id ?>" id='form1'>
+    <form method="post" action="<?php echo Configuration::BASE_URL; ?>admin/izmeni/<?php echo $DATA['zubar']->zubar_id ?>" id='form1'>
         <div class="form-group row">
             <label  class="col-2 col-form-label">Ime:</label>
             <div class="col-10">
@@ -25,9 +25,9 @@
         </div>
         
         <button type="submit" class="btn btn-success">Sacuvajte nove vrednosti</button>
-        
+        <a href="<?php echo Configuration::BASE_URL; ?>admin/" class="btn btn-warning">Odustani</a>
     </form>
-    <a href="<?php echo Configuration::BASE_URL; ?>admin/" class="btn btn-warning">Odustani</a>
+    
     <?php if (isset($DATA['poruka'])): ?>
         <p><?php echo htmlspecialchars($DATA['poruka']); ?></p>   
 

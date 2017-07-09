@@ -11,7 +11,9 @@
         </div>
         
         <button type="submit" class="btn btn-success">Dodajte kategoriju</button>
+        <a href = "<?php echo Configuration::BASE_URL;?>kategorije" class="btn btn-warning">Odustani</a>
     </form>
+    
     <?php if (isset($DATA['poruka'])): ?>
         <p><?php echo htmlspecialchars($DATA['poruka']); ?></p>   
 

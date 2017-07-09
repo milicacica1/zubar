@@ -103,6 +103,7 @@
             </div>
         </div>
     </div>
+    <a href = "<?php echo Configuration::BASE_URL;?>pacijenti/" class="btn btn-warning">Odustani</a>
     <div class="row col-12">
         <?php
         if (!isset($_POST['check_list'])) {

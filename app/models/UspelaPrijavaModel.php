@@ -20,11 +20,11 @@ class UspelaPrijavaModel implements ModelInterface {
         $prep = DataBase::getInstance()->prepare($SQL);
         return $prep->execute([$zubar_id, $datetime, $ip, $user_agent]);
     }
-    public static function addNeuspela($datetime, $username) {
-        $SQL = 'INSERT INTO neuspela_prijava (datetime, username) VALUES (?, ?);';
-        $prep = DataBase::getInstance()->prepare($SQL);
-        return $prep->execute([$datetime, $username]);
-    }
+//    public static function addNeuspela($datetime, $username) {
+//        $SQL = 'INSERT INTO neuspela_prijava (datetime, username) VALUES (?, ?);';
+//        $prep = DataBase::getInstance()->prepare($SQL);
+//        return $prep->execute([$datetime, $username]);
+//    }
     
 }
 

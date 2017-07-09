@@ -29,12 +29,12 @@ class MainController extends Controller {
                     
                 } else {
                     $this->setData('message', 'Nisu dobri login parametri.');
-                    $neuspela = UspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
+                    $neuspela = NeuspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
                     sleep(1);
                 }
             } else {
                 $this->setData('message', 'Nisu dobri login parametri.');
-                $neuspela = UspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
+                $neuspela = NeuspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
                 sleep(1);
             }
         }

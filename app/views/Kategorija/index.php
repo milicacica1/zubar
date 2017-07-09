@@ -1,7 +1,7 @@
 <?php require_once './app/views/_global/beforeContent.php'; ?>
 
 
-<table class="table table-bordered table-striped table-responsive col-12 col-md-9 col-lg-10" id="tableheight">
+<table class="table table-bordered table-striped table-responsive col-12 col-md-12 col-lg-12">
     <thead>
         <tr>
             <th class="text-center">Naziv</th>
@@ -29,4 +29,5 @@
             <?php endforeach; ?>
     </tbody>
 </table>
+<a href="<?php echo Configuration::BASE_URL;?>usluge/" class="btn btn-outline-warning">Povratak na usluge</a>
 <?php require_once 'app/views/_global/afterContent.php';?>

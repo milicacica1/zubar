@@ -49,7 +49,7 @@
             </div>
         </div>
         <button type="submit" class="btn btn-success">Sacuvajte nove vrednosti</button>
-
+        <a href = "<?php echo Configuration::BASE_URL;?>usluge/" class="btn btn-warning">Odustani</a>
     </form>
     <?php if (isset($DATA['poruka'])): ?>
         <p><?php echo htmlspecialchars($DATA['poruka']); ?></p>   

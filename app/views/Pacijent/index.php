@@ -23,7 +23,7 @@ if (is_array($DATA['pacijentitogzubara']))
         
         <article class="col-12 col-sm-12 col-md-6 col-lg-4">
 
-            <div class="thumbnail">
+            <div class="thumbnail bord">
                 <img  class="img img-thumbnail" alt="profilSlika"  src="<?php echo Configuration::BASE_URL; ?>assets/img/profil/<?php echo $pacijent->pacijent_id ?>.jpg"> 
                 <div class="caption">
                     <h3 class="ime"><?php
@@ -31,12 +31,12 @@ if (is_array($DATA['pacijentitogzubara']))
                         echo ' ';
                         echo $pacijent->prezime
                         ?></h3>
-                    <section class="row"><h5>Datum rodjenja:</h5><?php echo htmlspecialchars($pacijent->datum_rodjenja);?></section>
-                    <section class="row"><h5>E-mail: </h5><?php echo htmlspecialchars($pacijent->email);?></section>
-                    <section class="row"><h5>Broj telefona: </h5><?php echo htmlspecialchars($pacijent->telefon);?></section>
-                    <section class="row"><h5>JMBG: </h5><?php echo htmlspecialchars($pacijent->jmbg);?></section>
-                    <section class="row"><h5>Alergije: </h5><?php echo htmlspecialchars($pacijent->alergije);?></section>
-                    <section class="row"><h5>Kategorija pacijenta: </h5><?php echo htmlspecialchars($pacijent->kategorija_pacijenta);?></section>
+                    <section class="row"><h5 class="space">Datum rodjenja:</h5><?php echo htmlspecialchars($pacijent->datum_rodjenja);?></section>
+                    <section class="row"><h5 class="space">E-mail: </h5><?php echo htmlspecialchars($pacijent->email);?></section>
+                    <section class="row"><h5 class="space">Broj telefona: </h5><?php echo htmlspecialchars($pacijent->telefon);?></section>
+                    <section class="row"><h5 class="space">JMBG: </h5><?php echo htmlspecialchars($pacijent->jmbg);?></section>
+                    <section class="row"><h5 class="space">Alergije: </h5><?php echo htmlspecialchars($pacijent->alergije);?></section>
+                    <section class="row"><h5 class="space">Kategorija pacijenta: </h5><?php echo htmlspecialchars($pacijent->kategorija_pacijenta);?></section>
                     <div class="text-center mt-4">
                         
                         <a href="<?php echo Configuration::BASE_URL; ?>pregled/<?php echo $pacijent->pacijent_id ?>" class="btn btn-success  mr-3" role="button">Pregled</a> 

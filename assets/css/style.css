@@ -113,7 +113,7 @@ a{
     color: #248FBD;
 }
 #accordion{
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
 #accordion2{
     margin-bottom: 50px;
@@ -516,7 +516,7 @@ a{
     text-align: right;
 }
 #dole{
-    margin-bottom: 200px;
+    margin-bottom: 50px;
 }
 .goree{
 
@@ -540,4 +540,15 @@ button{
 #tableheight{
     height: 600px;
     width: 100%;
+}
+.bord{
+    border: solid 5px; 
+    border-color: #248FBD;
+        
+}
+.space{
+    margin-right: 5px;
+}
+.message{
+    color: red;
 }

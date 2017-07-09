@@ -35,4 +35,12 @@ class PregledModel implements ModelInterface{
         $prep->execute();
         return $prep->fetchAll(PDO::FETCH_OBJ);
     }
+    public function istorijaPacijenta($pacijent_id) {
+        $pacijent_id = intval($pacijent_id);
+        $SQL = 'SELECT zub, naziv, vreme FROM `intervencija` inner JOIN usluga on  intervencija.usluga_id=usluga.usluga_id inner join trenutnizub on intervencija.trenutni_zub_id = trenutnizub.trenutnizub_id where pacijent_id = ?;';
+        $prep = DataBase::getInstance()->prepare($SQL);
+        $prep->execute([$pacijent_id]);
+        return $prep->fetchAll(PDO::FETCH_OBJ);
+        
+    }
 }

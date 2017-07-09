@@ -9,7 +9,7 @@
                 ?>
     <a href="<?php echo Configuration::BASE_URL;?>usluge/prikaziPoKategoriji/<?php echo htmlspecialchars($kategorija->kategorija_id);?>" class="list-group-item"><?php echo htmlspecialchars($kategorija->vrsta);?></a>
     <?php endforeach; ?>
-    <a href="<?php echo Configuration::BASE_URL;?>kategorije/">Uredi kategorije</a>
+    <a href="<?php echo Configuration::BASE_URL;?>kategorije/" class="list-group-item">Uredi kategorije</a>
 </nav>
 
 

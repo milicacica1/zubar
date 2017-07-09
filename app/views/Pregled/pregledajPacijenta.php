@@ -63,16 +63,20 @@
                         ?>
                     </a>
 
+
                 </h5>
+                <a href = "<?php echo Configuration::BASE_URL; ?>pacijenti/" class="btn btn-warning mt-4">Odustani</a>
             </div>
             <div id="col1" class="collapse" role="tabpanel" aria-labelledby="headingOne">
                 <div class="card-block">
                     <!--                    <div class="row">-->
                     <img  class="img img-thumbnail" alt="profil slika"  src="<?php echo Configuration::BASE_URL; ?>assets/img/profil/<?php echo $DATA['pacijent']->pacijent_id; ?>.jpg">
                     <ul>
-                        <li><h6><?php echo $DATA['pacijent']->ime;
-                        echo '  ';
-                        echo $DATA['pacijent']->prezime; ?></h6></li>
+                        <li><h6><?php
+                                echo $DATA['pacijent']->ime;
+                                echo '  ';
+                                echo $DATA['pacijent']->prezime;
+                                ?></h6></li>
                         <li><h6><?php echo $DATA['pacijent']->datum_rodjenja; ?></h6></li>
                         <li><h6><?php echo $DATA['pacijent']->jmbg; ?></h6></li>
                         <li><h6><?php echo $DATA['pacijent']->email; ?></h6></li>
@@ -81,24 +85,6 @@
 
                     </ul>
 
-<!--                        <table class="oPacijentu">
-    <tr>
-        <th>Ime</th>
-        <th>Prezime</th> 
-        <th>Godine</th>
-    </tr>
-    <tr>
-        <td><?php //echo $DATA['pacijent']->ime;  ?></td>
-        <td><?php //echo $DATA['pacijent']->prezime;  ?></td> 
-        <td><?php //echo $DATA['pacijent']->datum_rodjenja;  ?></td>
-    </tr>
-    <tr>
-        <td><?php echo $DATA['pacijent']->jmbg; ?></td>
-        <td>Nema alergije</td>
-        <td>student</td> 
-    </tr>
-</table>-->
-                    <!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -106,132 +92,37 @@
     <div class="row col-12">
         <?php
         if (!isset($_POST['check_list'])) {
-            
+
         } else{
-            //foreach ($_POST['check_list'] as $checkbox) :
-                //PregledModel::setZubi($checkbox);
-                //$this->setDa
-                ?><div class="zubi col-lg-6">
-                    <form method="post" action="<?php echo Configuration::BASE_URL; ?>racun/<?php echo $DATA['pacijent']->pacijent_id ?>"">
-        <?php           foreach ($_POST['check_list'] as $checkbox) :
-            ?>
+        ?><div class="zubi col-lg-6" id="tableheight">
+            <form method="post" action="<?php echo Configuration::BASE_URL; ?>racun/<?php echo $DATA['pacijent']->pacijent_id ?>"">
+                <?php foreach ($_POST['check_list'] as $checkbox) :
+                ?>
 
-                            <h3>Zub - <?php echo $checkbox ?></h3>
-            <!--                <input hidden checked type="checkbox" name="check_List[]" value="<?php //echo $checkbox ?>">-->
-                            <?php
-                            // foreach ($DATA['kategorija'] as $kategorija):
-                            //  echo '<h5>' . $kategorija->vrsta . '</h5>';
-                            foreach ($DATA['pregledi'] as $pregled):
+                <h3>Zub - <?php echo $checkbox ?></h3>
+<!--                <input hidden checked type="checkbox" name="check_List[]" value="<?php //echo $checkbox ?>">-->
+                <?php
+                // foreach ($DATA['kategorija'] as $kategorija):
+                //  echo '<h5>' . $kategorija->vrsta . '</h5>';
+                foreach ($DATA['pregledi'] as $pregled):
 
-                                //  if ($pregled->vrsta == $kategorija->vrsta) {
-                                echo '<input type="checkbox" class="check2" name = "check_List[]" value="' . $checkbox . '_' . $pregled->usluga_id . '"/>' . $pregled->naziv . '<br />';
-                                // }
+                //  if ($pregled->vrsta == $kategorija->vrsta) {
+                echo '<input type="checkbox" class="check2" name = "check_List[]" value="' . $checkbox . '_' . $pregled->usluga_id . '"/>' . $pregled->naziv . '<br />';
+                // }
 
-                            endforeach;
-                            ?>
-                            <?php //endforeach; ?>
+                endforeach;
+                ?>
+                <?php //endforeach;  ?>
 
-        <?php endforeach;
-         ?>
-                        <button type="submit" class="btn btn-primary razmak" >Potvrdi</button>
-                    </form>
-        </div><?php }?>
-<!--                <div class="zubi col-lg-6">
-                    <form>
-                        <h3>Zub - <?php //echo $checkbox  ?></h3>
-                        <h5>Preventiva</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Redovna</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Hirurgija</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Protetika</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                    </form>
-                </div>
+                <?php endforeach;
+                ?>
+                <button type="submit" class="btn btn-primary razmak" >Potvrdi</button>
+            </form>
+        </div><?php } ?>
 
-                <button type="submit" class="btn btn-primary razmak" >Potvrdi</button>-->
-
-       
-        <!--        <div class="zubi col-lg-6">
-                    <form>
-                        <h3>Zub - 1-2</h3>
-                        <h5>Preventiva</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Redovna</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Hirurgija</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Protetika</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                    </form>
-                </div>
-                <div class="zubi col-lg-6">
-                    <form>
-                        <h3>Zub - 3-6</h3>
-                        <h5>Preventiva</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Redovna</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Hirurgija</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                        <h5>Protetika</h5>
-                        <input type="checkbox" class="check2"/> Pregled 1 <br />
-                        <input type="checkbox" class="check2"/> Pregled 2 <br />
-                        <input type="checkbox" class="check2"/> Pregled 3 <br />
-                        <input type="checkbox" class="check2"/> Pregled 4 <br />
-                        <input type="checkbox" class="check2"/> Pregled 5 <br />
-                    </form>
-                </div>
-            </div>-->
-        <!--            <button type="submit" class="btn btn-primary razmak" >Potvrdi</button>-->
     </div>  
 </div>
-<div class="panel panel-default col-12"> <div class="panel-heading">Izvestaj</div>
+<!--<div class="panel panel-default col-12"> <div class="panel-heading">Izvestaj</div>
     <table class="table"> 
         <thead> 
             <tr> 
@@ -263,8 +154,8 @@
     <div class="desno">
         <button type="submit" class="btn btn-primary razmak">Štampa računa</button>
         <button type="submit" class="btn btn-primary razmak">Poništi</button>
-    </div>
-    <div id="accordion" role="tablist" aria-multiselectable="true">
+    </div>-->
+<div class="col-12"id="accordion" role="tablist" aria-multiselectable="true">
         <div class="card" id="dole">
             <div class="card-header" role="tab" id="heading1">
                 <h5 class="mb-0">
@@ -282,31 +173,18 @@
                                 <th>Datum</th> 
                                 <th>Usluga</th>
                             </tr>
+                            
+                                <?php
+                                if(is_array($DATA['istorija']))
+                                foreach ($DATA['istorija'] as $ist):
+                                ?>
                             <tr>
-                                <td>2-1</td>
-                                <td>23/03/2017/</td> 
-                                <td>Livena nadogradnja</td>
+                                <td><?php echo $ist->zub ?></td>
+                                <td><?php echo $ist->vreme ?></td> 
+                                <td><?php echo $ist->naziv ?></td>
                             </tr>
-                            <tr>
-                                <td>2-1</td>
-                                <td>23/03/2017/</td> 
-                                <td>Livena nadogradnja</td> 
-                            </tr>
-                            <tr>
-                                <td>2-1</td>
-                                <td>23/03/2017/</td> 
-                                <td>Livena nadogradnja</td> 
-                            </tr>
-                            <tr>
-                                <td>2-1</td>
-                                <td>23/03/2017/</td> 
-                                <td>Livena nadogradnja</td> 
-                            </tr>
-                            <tr>
-                                <td>2-1</td>
-                                <td>23/03/2017/</td> 
-                                <td>Livena nadogradnja</td> 
-                            </tr>
+                                        <?php endforeach;?>
+                            
                         </table>
                     </div>
                 </div>

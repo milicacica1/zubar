@@ -45,11 +45,11 @@ class AdminLoginModel implements ModelInterface {
         return $prep->execute([$username, $password, $ime, $prezime]);
     
     }
-    public static function izmeni($username, $password, $ime, $prezime, $zubar_id) {
+    public static function izmeni($username, $ime, $prezime, $zubar_id) {
         $zubar_id = intval($zubar_id);
-        $SQL = 'UPDATE zubar SET username = ?, password = ?, ime = ?, prezime = ? WHERE zubar_id = ?;';
+        $SQL = 'UPDATE zubar SET username = ?, ime = ?, prezime = ? WHERE zubar_id = ?;';
         $prep = DataBase::getInstance()->prepare($SQL);
-        return $prep->execute([$username, $password, $ime, $prezime, $zubar_id]);
+        return $prep->execute([$username, $ime, $prezime, $zubar_id]);
     
     }
 

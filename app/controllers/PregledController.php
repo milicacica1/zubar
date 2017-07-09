@@ -21,9 +21,25 @@ class PregledController extends AdminController {
         $this->setData('pregledi', $pregledi);
         $listaKategorija = SadrzajModel::getCategory();
         $this->setData('kategorija', $listaKategorija);
+        $istorija = PregledModel::istorijaPacijenta($pacijent_id);
+        $this->setData('istorija', $istorija);
 //        $pregled = PregledModel::setZubi($j);
 //        $this->setData('pregled', $pregled);
          
     }
+    public function istorijaPacijenta($pacijent_id) {
+        $pacijent = PregledModel::getById($pacijent_id);
+        $this->setData('pacijent', $pacijent);
+        $this->setData('naslov', 'Pregled');
+        
+        $pregledi = PregledModel::getAllUsluge();
+        $this->setData('pregledi', $pregledi);
+        $listaKategorija = SadrzajModel::getCategory();
+        $this->setData('kategorija', $listaKategorija);
+//        $pregled = PregledModel::setZubi($j);
+//        $this->setData('pregled', $pregled);
+         
+    }
+    
 }
 

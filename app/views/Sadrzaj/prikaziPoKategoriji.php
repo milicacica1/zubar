@@ -9,6 +9,7 @@
                 ?>
     <a href="<?php echo Configuration::BASE_URL;?>usluge/prikaziPoKategoriji/<?php echo $kategorija->kategorija_id?>" class="list-group-item"><?php echo $kategorija->vrsta ?></a>
     <?php endforeach; ?>
+    <a href="<?php echo Configuration::BASE_URL;?>kategorije/" class="list-group-item">Uredi kategorije</a>
 </nav>
 
 <table class="table table-bordered table-striped table-responsive col-12 col-md-9 col-lg-10" id="tableheight">

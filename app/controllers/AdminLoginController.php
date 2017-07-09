@@ -38,7 +38,7 @@ class AdminLoginController extends AdminController {
                     and preg_match('/^[A-Z][a-z]+/', $ime)
                     and preg_match('/^[A-Z][a-z]+(-[A-Z][a-z]+)*/', $prezime)) {
                 $hash = hash('sha512', $password . Configuration::USER_SALT);
-                $res = AdminLoginController::dodaj($username, $hash, $ime, $prezime);
+                $res = AdminLoginModel::dodaj($username, $hash, $ime, $prezime);
                 if ($res) {
                     $this->setData('poruka', "UNETI SU PODACI");
                     Misc::redirect('admin/');
@@ -60,7 +60,7 @@ class AdminLoginController extends AdminController {
         if ($_POST) {
             $confirmed = filter_input(INPUT_POST, 'confirmed', FILTER_SANITIZE_NUMBER_INT);
             if ($confirmed == 1) {
-                $res = AdminLoginController::ukloni($zubar_id);
+                $res = AdminLoginModel::ukloni($zubar_id);
                 if ($res) {
                     Misc::redirect('admin/');
                 } else {
@@ -76,15 +76,15 @@ class AdminLoginController extends AdminController {
         $this->setData('naslov', 'Izmena zubara');
         if ($_POST) {
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-            $password = filter_input(INPUT_POST, 'password');
+            //$password = filter_input(INPUT_POST, 'password');
             $ime = filter_input(INPUT_POST, 'ime', FILTER_SANITIZE_STRING);
             $prezime = filter_input(INPUT_POST, 'prezime', FILTER_SANITIZE_STRING);
             
-            if (preg_match('/^[a-z]{4,}$/', $username) and preg_match('/^.{6,}$/', $password)
+            if (preg_match('/^[a-z]{4,}$/', $username) 
                     and preg_match('/^[A-Z][a-z]+/', $ime)
                     and preg_match('/^[A-Z][a-z]+(-[A-Z][a-z]+)*/', $prezime)) {
                 $hash = hash('sha512', $password . Configuration::USER_SALT);
-                $res = AdminLoginController::izmeni($username, $hash, $ime, $prezime);
+                $res = AdminLoginModel::izmeni($username, $ime, $prezime, $zubar_id);
                 if ($res) {
                     $this->setData('poruka', "UNETI SU PODACI");
                     Misc::redirect('admin/');

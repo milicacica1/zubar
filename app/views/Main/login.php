@@ -24,7 +24,7 @@
                                 <input type="password" name="password" id="key" class="form-control" placeholder="Lozinka" required pattern="^.{6,}$">
                             </div>
                             <?php if (isset($DATA['message'])): ?>
-                                <h5 class="mb-4"><?php echo htmlspecialchars($DATA['message']); ?></h5>
+                                <h5 class="mb-4 message"><?php echo htmlspecialchars($DATA['message']); ?></h5>
                             <?php endif; ?>
                             <button type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="prijava">Prijavi se</button>
                         </form>

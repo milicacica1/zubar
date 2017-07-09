@@ -11,10 +11,10 @@ class PacijentController extends AdminController {
     }
 
     public function dodaj() {
-        $listaUsluga = PacijentModel::getAll();
-        $this->setData('usluge', $listaUsluga);
-        $listaKategorija = SadrzajModel::getCategory();
-        $this->setData('kategorija', $listaKategorija);
+//        $listaUsluga = PacijentModel::getAll();
+//        $this->setData('usluge', $listaUsluga);
+//        $listaKategorija = SadrzajModel::getCategory();
+//        $this->setData('kategorija', $listaKategorija);
         $this->setData('naslov', 'Dodaj pacijenta');
 
         $w = false;
