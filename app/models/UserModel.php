@@ -32,15 +32,5 @@ class UserModel implements ModelInterface {
             return null;
         }
     }
-//    public static function addUspela($zubar_id, $datetime, $ip, $user_agent) {
-//        $SQL = 'INSERT INTO uspela_prijava (zubar_id, datetime, ip, user_agent) VALUES (?, ?, ?, ?);';
-//        $prep = DataBase::getInstance()->prepare($SQL);
-//        return $prep->execute([$zubar_id, $datetime, $ip, $user_agent]);
-//    }
-//    public static function addNeuspela($datetime, $username) {
-//        $SQL = 'INSERT INTO neuspela_prijava (datetime, username) VALUES (?, ?);';
-//        $prep = DataBase::getInstance()->prepare($SQL);
-//        return $prep->execute([$datetime, $username]);
-//    }
 
 }

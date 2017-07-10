@@ -2,7 +2,7 @@
 
 
 <article class="container">
-    <h2>Izmena podataka o pacijentu</h2>
+    <h2>Izmena podataka o zubaru</h2>
     <form method="post" action="<?php echo Configuration::BASE_URL; ?>admin/izmeni/<?php echo $DATA['zubar']->zubar_id ?>" id='form1'>
         <div class="form-group row">
             <label  class="col-2 col-form-label">Ime:</label>

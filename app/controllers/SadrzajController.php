@@ -1,28 +1,25 @@
 <?php
 
 class SadrzajController extends AdminController {
-
+    /**
+     * Metod index u Sadrzaj kontroleru koji prikazuje sve usluge koje postoje u ovoj zubarskoj ordinaciji. 
+     * Sadrzaj model poziva funkciju getAll kako bi uzeo sve usluge.
+     * Takodje se postavlja i naslov.
+     */
     public function index() {
-
         $this->setData('naslov', 'Usluge');
-
         $listaUsluga = SadrzajModel::getAll();
         $this->setData('usluge', $listaUsluga);
-
         $listaKategorija = SadrzajModel::getCategory();
         $this->setData('kategorija', $listaKategorija);
     }
 
     public function prikaziPoKategoriji($kategorija_id) {
-        $naslov = SadrzajModel::getCategoryNameById($kategorija_id);
-
+        $naslov = KategorijaModel::getById($kategorija_id);
         $this->setData('naslov', $naslov->vrsta);
-        $temp = 1;
-        $default = SadrzajModel::getByCategoryId($temp);
-        $this->setData('default', $default);
-        $listaUslugaPoKateoriji = SadrzajModel::getByCategoryId($kategorija_id);
+        $listaUslugaPoKateoriji = KategorijaModel::getById($kategorija_id);
         $this->setData('uslugepokategoriji', $listaUslugaPoKateoriji);
-        $listaKategorija = SadrzajModel::getCategory();
+        $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorija', $listaKategorija);
     }
 
@@ -104,10 +101,10 @@ class SadrzajController extends AdminController {
             $confirmed = filter_input(INPUT_POST, 'confirmed', FILTER_SANITIZE_NUMBER_INT);
             if ($confirmed == 1) {
                 $res = SadrzajModel::ukloni($usluga_id);
-                if ($res) {
-                    Misc::redirect('usluge/');
+                if ($res == true) {
+                    Misc::redirect('usluge');
                 } else {
-                    $this->setData('poruka', "Usluga je uklonjena!");
+                    $this->setData('poruka', "Usluga nije uklonjena!");
                 }
             }
         }

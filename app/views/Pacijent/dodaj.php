@@ -2,14 +2,14 @@
 
 
 <li class="nav-item">
-    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item">
-    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" id="active2"><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" id="active2"><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
 </li>
 
 <li class="nav-item">
-    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
 </li>
 
 </ul>
@@ -33,7 +33,7 @@
                 <input type="text" name="ime" id="f1_ime" required class="form-control" pattern="[A-Z][a-z]+" title="Ime pacijenta mora početi veliki slovom!">
             </div>
         </div>
-        <div class="form-group row"">
+        <div class="form-group row">
             <label class="col-2 col-form-label">Prezime:</label>
             <div class="col-10">
                 <input type="text" name="prezime" id="f1_prezime" required class="form-control"  pattern="[A-Z][a-z]+(-[A-Z][a-z]+)*" title="Prezime pacijenta mora početi veliki slovom!">

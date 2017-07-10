@@ -1,13 +1,13 @@
 <?php require_once './app/views/_global/beforeContent.php'; ?>
 <li class="nav-item">
-    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item">
-    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" ><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" ><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
 </li>
 
 <li class="nav-item">
-    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/" id="active2"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/" id="active2"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
 </li>
 
 </ul>
