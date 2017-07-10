@@ -36,9 +36,9 @@ class PregledModel implements ModelInterface{
     }
     public function istorijaPacijenta($pacijent_id) {
         $pacijent_id = intval($pacijent_id);
-        $SQL = 'SELECT zub, naziv, cena, vreme, kataloski_broj, vrsta, cena_sa_popustom, opis, email 
-            FROM `istorija` inner JOIN intervencija on istorija.intervenija_id = intervencija.intervencija_id INNER JOIN 
-            pacijent on intervencija.pacijent_id = pacijent.pacijent_id INNER JOIN usluga on intervencija.usluga_id = usluga.usluga_id INNER JOIN 
+        $SQL = 'SELECT zub, naziv, cena, vreme, kataloski_broj, vrsta, cena_sa_popustom, opis, email FROM `intervencija`  INNER JOIN 
+            pacijent on intervencija.pacijent_id = pacijent.pacijent_id INNER JOIN 
+            usluga on intervencija.usluga_id = usluga.usluga_id INNER JOIN 
             kategorija on usluga.kategorija_id = kategorija.kategorija_id where pacijent.pacijent_id = ?;';
         $prep = DataBase::getInstance()->prepare($SQL);
         $prep->execute([$pacijent_id]);
@@ -60,11 +60,15 @@ class PregledModel implements ModelInterface{
         return $prep->execute([$pacijent_id, $zubar_id, $usluga_id, $zub]);
         
     }
-    public static function ukloni($pacijent_id){
-        $pacijent_id = intval($pacijent_id);
-        $SQL = 'DELETE from intervencija WHERE pacijent_id = ?;';
+    public function getAllByZybarID($zubar_id) {
+        $zubar_id = intval($zubar_id);
+        $SQL = 'SELECT pacijent.ime, pacijent.prezime, jmbg, kategorija_pacijenta, zub, naziv, cena, vreme, kataloski_broj, vrsta, cena_sa_popustom, opis, email FROM `intervencija`  INNER JOIN 
+            pacijent on intervencija.pacijent_id = pacijent.pacijent_id INNER JOIN 
+            usluga on intervencija.usluga_id = usluga.usluga_id INNER JOIN 
+            kategorija on usluga.kategorija_id = kategorija.kategorija_id inner join zubar on intervencija.zubar_id = zubar.zubar_id where intervencija.zubar_id = ?;';
         $prep = DataBase::getInstance()->prepare($SQL);
-        return $prep->execute([$pacijent_id]);
+        $prep->execute([$zubar_id]);
+        return $prep->fetchAll(PDO::FETCH_OBJ);
         
     }
 }

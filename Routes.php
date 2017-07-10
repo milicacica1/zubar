@@ -68,6 +68,7 @@
 //            'Method'     => 'zubi'
 //        ]
 //        ,
+        //pregled/izvrsi/
         [
             'Pattern'    => '|^pregled/([0-9]+)/?$|',
             'Controller' => 'Pregled',
@@ -75,9 +76,27 @@
         ]
         ,
         [
-            'Pattern'    => '|^pregled/racun/([0-9]+)/?$|',
+            'Pattern'    => '|^izvrsi/([0-9]+)/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'izvrsi'
+        ]
+        ,
+        [
+            'Pattern'    => '|^izvrsi/racun/([0-9]+)/?$|',
             'Controller' => 'Pregled',
             'Method'     => 'racun'
+        ]
+        ,
+        [
+            'Pattern'    => '|^intervencije/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'intervencije'
+        ]
+        ,
+        [
+            'Pattern'    => '|^pregled/racun/ukloni/([0-9]+)/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'ukloni'
         ]
         ,
         [

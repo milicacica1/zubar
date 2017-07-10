@@ -49,7 +49,7 @@ a{
 .jumbotron{
     background: url("../img/pozadina3.jpg") no-repeat;
     background-size: cover;
-    height: 300px;
+    height: 250px;
     background-attachment: fixed;
     width:100%;
     border-radius: 0px;
@@ -541,6 +541,10 @@ button{
     height: 600px;
     width: 100%;
 }
+#tableheight2{
+    height: 1000px;
+    width: 100%;
+}
 .bord{
     border: solid 5px; 
     border-color: #248FBD;
@@ -551,4 +555,22 @@ button{
 }
 .message{
     color: red;
+}
+.stil{
+    background-color: #248FBD;
+    color: white;
+}
+.custom-control-indicator{
+    color: #248FBD;
+}
+#active3:active{
+    background-color: #248FBD;
+    border-color: #248FBD;
+    color: #fff;
+}
+.active2{
+    background-color: #248FBD;
+    border-color: #248FBD;
+    border: 3px solid;
+    color: #fff;
 }

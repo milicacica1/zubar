@@ -2,7 +2,14 @@
 
 class SadrzajModel implements ModelInterface{
     public static function getAll(){
-        $SQL = 'SELECT * FROM usluga ORDER BY naziv;';
+        $SQL = 'SELECT * FROM usluga';
+        //$SQL = 'SELECT * FROM usluga INNER JOIN kategorija ON usluga.kategorija_id = kategorija.kategorija_id ORDER BY naziv;';
+        $prep = DataBase::getInstance()->prepare($SQL);
+        $prep->execute();
+        return $prep->fetchAll(PDO::FETCH_OBJ);
+    }
+    public static function getAllWithCat(){
+        $SQL = 'SELECT * FROM usluga inner join kategorija on usluga.kategorija_id = kategorija.kategorija_id';
         //$SQL = 'SELECT * FROM usluga INNER JOIN kategorija ON usluga.kategorija_id = kategorija.kategorija_id ORDER BY naziv;';
         $prep = DataBase::getInstance()->prepare($SQL);
         $prep->execute();

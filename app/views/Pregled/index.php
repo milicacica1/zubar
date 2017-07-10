@@ -1,6 +1,29 @@
 
 <?php require_once './app/views/_global/beforeContent.php'; ?>
 
+<li class="nav-item">
+    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" id="active2"><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
+</li>
+
+<li class="nav-item">
+    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
+</li>
+
+</ul>
+
+
+<a class="btn btn-outline-danger " href="<?php echo Configuration::BASE_URL; ?>logout/" id="odjava"><span class="align-bottom">Odjava sa sistema</span></a>
+
+
+</div>
+</nav>
+</div>
+</header>
+<main class="container">
+    <div class="row">
 <section class="blabla">
     <div class="bla">
         <form method="post" action="<?php echo Configuration::BASE_URL; ?>pregled/<?php echo $DATA['pacijent']->pacijent_id ?>">

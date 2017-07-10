@@ -1,14 +1,32 @@
 <?php require_once './app/views/_global/beforeContent.php'; ?>
 
+<li class="nav-item">
+    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" id="active2"><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
+</li>
+
+<li class="nav-item">
+    <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
+</li>
+
+</ul>
+
+
+<a class="btn btn-outline-danger " href="<?php echo Configuration::BASE_URL; ?>logout/" id="odjava"><span class="align-bottom">Odjava sa sistema</span></a>
+
+
+</div>
+</nav>
+</div>
+</header>
+<main class="container">
+    <div class="row">
 
 <h1 id="naslov" class="mr-auto">Svi pacijenti</h1>
 
-<form class="form-inline">
 
-    <input class="form-control" type="text" placeholder="Pretraži pacijenta">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pretraga</button>
-
-</form>
 <a href="<?php echo Configuration::BASE_URL; ?>pacijent/dodaj" class="btn btn-lg btn-outline-success btn-block mb-5"> Dodaj pacijenta &#10010;</a>
 
 <div class="row col-12">

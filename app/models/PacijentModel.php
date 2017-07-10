@@ -6,9 +6,17 @@ class PacijentModel implements ModelInterface{
         $prep->execute();
         return $prep->fetchAll(PDO::FETCH_OBJ);
     }
+    //getKategorijaPacijentaById
     public static function getById($pacijent_id){
         $pacijent_id = intval($pacijent_id);
         $SQL = 'SELECT * FROM pacijent WHERE pacijent_id = ?';
+        $prep = DataBase::getInstance()->prepare($SQL);
+        $prep->execute([$pacijent_id]);
+        return $prep->fetch(PDO::FETCH_OBJ);
+    }
+    public static function getKategorijaPacijentaById($pacijent_id){
+        $pacijent_id = intval($pacijent_id);
+        $SQL = 'SELECT kategorija_pacijenta FROM pacijent WHERE pacijent_id = ?';
         $prep = DataBase::getInstance()->prepare($SQL);
         $prep->execute([$pacijent_id]);
         return $prep->fetch(PDO::FETCH_OBJ);
