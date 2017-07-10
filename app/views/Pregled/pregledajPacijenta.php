@@ -95,7 +95,7 @@
 
         } else{
         ?><div class="zubi col-lg-6" id="tableheight">
-            <form method="post" action="<?php echo Configuration::BASE_URL; ?>racun/<?php echo $DATA['pacijent']->pacijent_id ?>"">
+            <form method="post" action="<?php echo Configuration::BASE_URL; ?>pregled/racun/<?php echo $DATA['pacijent']->pacijent_id ?>"">
                 <?php foreach ($_POST['check_list'] as $checkbox) :
                 ?>
 
@@ -175,7 +175,7 @@
                             </tr>
                             
                                 <?php
-                                if(is_array($DATA['istorija']))
+                                    if(is_array($DATA['istorija']))
                                 foreach ($DATA['istorija'] as $ist):
                                 ?>
                             <tr>

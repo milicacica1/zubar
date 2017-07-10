@@ -75,6 +75,12 @@
         ]
         ,
         [
+            'Pattern'    => '|^pregled/racun/([0-9]+)/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'racun'
+        ]
+        ,
+        [
             'Pattern'    => '|^admin/?$|',
             'Controller' => 'AdminLogin',
             'Method'     => 'index'
