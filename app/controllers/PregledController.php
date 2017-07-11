@@ -1,41 +1,44 @@
 <?php
 
 class PregledController extends AdminController {
-
+    
     public function index() {
 
     }
+    /**
+     * Funkcija pregledaj pacijenta uzima pacijenta po id-ju.
+     * Kako bi se izlistale informacije o pacijentu na toj strani.
+     * Poziva se Pacijent model i njegoca funkcija getById.
+     * Takodje u ovoj funkciji se uzima istorija pacijenta sa ti id-jem.
+     * Postavlja se i naslov.
+     * @param int $pacijent_id
+     */
 
     public function pregledajPacijenta($pacijent_id) {
         $pacijent = PacijentModel::getById($pacijent_id);
         $this->setData('pacijent', $pacijent);
         $this->setData('naslov', 'Pregled');
-
-        $pregledi = PregledModel::getAllUsluge();
-        $this->setData('pregledi', $pregledi);
-        $listaKategorija = SadrzajModel::getCategory();
-        $this->setData('kategorija', $listaKategorija);
         $istorija = PregledModel::istorijaPacijenta($pacijent_id);
         $this->setData('istorija', $istorija);
     }
-
-    public function istorijaPacijenta($pacijent_id) {
-        $pacijent = PregledModel::getById($pacijent_id);
-        $this->setData('pacijent', $pacijent);
-        $this->setData('naslov', 'Pregled');
-
-        $pregledi = PregledModel::getAllUsluge();
-        $this->setData('pregledi', $pregledi);
-        $listaKategorija = SadrzajModel::getCategory();
-        $this->setData('kategorija', $listaKategorija);
-    }
+    /**
+     * Funkcija intrvencije u Pregled kontroleru izlistava sve intervencije koje je taj zubar uradio.
+     * Ove informacije se mogu videti u panelu 'Pogledaj sve intervencije'
+     */
+    
     public function intervencije() {
         $zubar_id = Session::get('zubar_id');
         $intervencije = PregledModel::getAllByZybarID($zubar_id);
         $this->setData('intervencije', $intervencije);
         $this->setData('naslov', 'Sve intervencije');
     }
-
+    /**
+     * Funckija racun uzima sve intervencije iz forme sa checkbox-ovima.
+     * Pre toga mora da ispise sve intervencije za oznacene zube na prethodnoj stranici.
+     * Kada se izlistaju svi zubi, oznace se sve intervencije radjene na tim zubima.
+     * Uzimaju se parametri i dodaju u bazu kao istorija pacijenta.
+     * @param int $pacijent_id
+     */
     public function racun($pacijent_id) {
         $pacijent = PacijentModel::getById($pacijent_id);
         $kategorija = PacijentModel::getKategorijaPacijentaById($pacijent_id);
@@ -50,8 +53,15 @@ class PregledController extends AdminController {
             $p = $_POST['check_List'];
             foreach ($p as $pp):
                 list($zub, $usluga_id) = explode('_', $pp);
-                $res = PregledModel::dodajIntervenciju($pacijent_id, $zubar_id, $usluga_id, $zub);
+                if(preg_match('/[0-9]+$/', $usluga_id) 
+                        and preg_match('/[0-9]+$/', $pacijent_id) 
+                        and preg_match('/[0-9]+$/', $zubar_id) 
+                        and preg_match('/[1-4][1-8]/', $zub)){
+                    $res = PregledModel::dodajIntervenciju($pacijent_id, $zubar_id, $usluga_id, $zub);
                 $u = SadrzajModel::getById($usluga_id);
+                }else{
+                    $this->setData('poruka', 'Nisu uneti ispravni podaci!');
+                }
                 array_push($usluge, $u);
                 array_push($zubi, $zub);
             endforeach;
@@ -76,7 +86,12 @@ class PregledController extends AdminController {
             $this->setData('ukupno', $i);
         }
     }
-
+    /**
+     * Metod izvrsi uzima iz checkboxa na zubima sve zube i salje dalje.
+     * Ukoliko nisu oznaceni zubi vratice prazan niz.
+     * Korisnik ukoliko nije iyabrao zube ima dugme da se vrati da opet oznaci.
+     * @param int $pacijent_id
+     */
     public function izvrsi($pacijent_id) {
         $this->setData('pacijent', $pacijent_id);
         $this->setData('naslov', 'Pregled');
@@ -84,10 +99,8 @@ class PregledController extends AdminController {
         if (!isset($_POST['check_list'])) {
             $this->setData('bla', $usluge);
         } else {
-
             foreach ($_POST['check_list'] as $checkbox) :
                 array_push($usluge, $checkbox);
-
             endforeach;
             $pregledi = SadrzajModel::getAllWithCat();
             $this->setData('pregledi', $pregledi);

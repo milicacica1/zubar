@@ -112,33 +112,6 @@
                     </div>
                 </div>
             </div>
-            <div class="row col-12">
-                <?php
-                if (!isset($_POST['check_list'])) {
-                    
-                } else {
-                    ?><div class="zubi col-lg-6" id="tableheight">
-                        <form method="post" action="<?php echo Configuration::BASE_URL; ?>pregled/racun/<?php echo $DATA['pacijent']->pacijent_id ?>"">
-                            <?php foreach ($_POST['check_list'] as $checkbox) :
-                                ?>
-
-                                <h3>Zub - <?php echo $checkbox ?></h3>
-                                <?php
-                                foreach ($DATA['pregledi'] as $pregled):
-
-                                    echo '<input type="checkbox" class="check2" name = "check_List[]" value="' . $checkbox . '_' . $pregled->usluga_id . '"/>' . $pregled->naziv . '<br />';
-
-                                endforeach;
-                                ?>
-                                <?php //endforeach;  ?>
-
-                            <?php endforeach;
-                            ?>
-                            <button type="submit" class="btn btn-primary razmak" >Potvrdi</button>
-                        </form>
-                    </div><?php } ?>
-
-            </div>  
         </div>
         <div class="col-12" id="accordion" role="tablist" aria-multiselectable="true">
             <div class="card" id="dole">

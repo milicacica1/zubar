@@ -1,0 +1,153 @@
+
+<?php require_once './app/views/_global/beforeContent.php'; ?>
+
+<li class="nav-item">
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" id="active2"><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
+</li>
+
+</ul>
+
+
+<a class="btn btn-outline-danger " href="<?php echo Configuration::BASE_URL; ?>logout/" id="odjava"><span class="align-bottom">Odjava sa sistema</span></a>
+
+
+</div>
+</nav>
+</div>
+</header>
+<main class="container">
+    <div class="row">
+        <section class="blabla">
+            <div class="bla">
+                <form method="post" action="<?php echo Configuration::BASE_URL; ?>izvrsi/<?php echo $DATA['pacijent']->pacijent_id ?>">
+                    <div class="dolejedan"><input type="checkbox" class="check" name="check_list[]" value="38"></div>
+                    <div class="doledva"><input type="checkbox" class="check" name="check_list[]" value="37"></div>
+                    <div class="doletri"><input type="checkbox" class="check" name="check_list[]" value="36"></div>
+                    <div class="dolecetiri"><input type="checkbox" class="check" name="check_list[]" value="35"></div>
+                    <div class="dolepet"><input type="checkbox" class="check" name="check_list[]" value="34"></div>
+                    <div class="dolesest"><input type="checkbox" class="check" name="check_list[]" value="33"></div>
+                    <div class="dolesedam"><input type="checkbox" class="check" name="check_list[]" value="32"></div>
+                    <div class="doleosam"><input type="checkbox" class="check" name="check_list[]" value="31"></div>
+                    <div class="doledevet"><input type="checkbox" class="check" name="check_list[]" value="41"></div>
+                    <div class="doledeset"><input type="checkbox" class="check" name="check_list[]" value="42"></div>
+                    <div class="dolejedanaest"><input type="checkbox" class="check" name="check_list[]" value="43"></div>
+                    <div class="doledvanaest"><input type="checkbox" class="check" name="check_list[]" value="44"></div>
+                    <div class="doletrinaest"><input type="checkbox" class="check" name="check_list[]" value="45"></div>
+                    <div class="dolecetrnaest"><input type="checkbox" class="check" name="check_list[]" value="46"></div>
+                    <div class="dolepetnaest"><input type="checkbox" class="check" name="check_list[]" value="47"></div>
+                    <div class="dolesesnaest"><input type="checkbox" class="check" name="check_list[]" value="48"></div>
+                    <div class="jedan"><input type="checkbox" class="check" name="check_list[]" value="28"></div>
+                    <div class="dva"><input type="checkbox" class="check" name="check_list[]" value="27"></div>
+                    <div class="tri"><input type="checkbox" class="check" name="check_list[]" value="26"></div>
+                    <div class="cetiri"><input type="checkbox" class="check" name="check_list[]" value="25"></div>
+                    <div class="pet"><input type="checkbox" class="check" name="check_list[]" value="24"></div>
+                    <div class="sest"><input type="checkbox" class="check" name="check_list[]" value="23"></div>
+                    <div class="sedam"><input type="checkbox" class="check" name="check_list[]" value="22"></div>
+                    <div class="osam"><input type="checkbox" class="check" name="check_list[]" value="21"></div>
+                    <div class="devet"><input type="checkbox" class="check" name="check_list[]" value="11"></div>
+                    <div class="deset"><input type="checkbox" class="check" name="check_list[]" value="12"></div>
+                    <div class="jedanaest"><input type="checkbox" class="check" name="check_list[]" value="13"></div>
+                    <div class="dvanaest"><input type="checkbox" class="check" name="check_list[]" value="14"></div>
+                    <div class="trinaest"><input type="checkbox" class="check" name="check_list[]" value="15"></div>
+                    <div class="cetrnaest"><input type="checkbox" class="check" name="check_list[]" value="16"></div>
+                    <div class="petnaest"><input type="checkbox" class="check" name="check_list[]" value="17"></div>
+                    <div class="sesnaest"><input type="checkbox" class="check" name="check_list[]" value="18"></div>
+                    <div class="potvrda">
+                        <button type="submit" class="dugmePotvrda" >Označite zube</button> 
+                        <h1 class="vilica1">1</h1>
+                        <h1 class="vilica2">2</h1>
+                        <h1 class="vilica3">4</h1>
+                        <h1 class="vilica4">3</h1>
+                    </div>
+                </form>
+
+
+            </div>
+        </section>
+        <div class="col-12 col-md-12 col-lg-7">
+            <h3 id="pacijent">Pacijent:</h3> 
+            <div id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+
+                            <a data-toggle = "collapse" data-parent = "#accordion" href = "#col1" aria-expanded = "true" aria-controls = "col1">
+                                <?php
+                                echo $DATA['pacijent']->ime;
+                                echo ' ';
+                                echo $DATA['pacijent']->prezime;
+                                ?>
+                            </a>
+
+
+                        </h5>
+                        <a href = "<?php echo Configuration::BASE_URL; ?>pacijenti/" class="btn btn-warning mt-4">Odustani</a>
+                    </div>
+                    <div id="col1" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="card-block">
+                            <!--                    <div class="row">-->
+                            <img  class="img img-thumbnail" alt="profil slika"  src="<?php echo Configuration::BASE_URL; ?>assets/img/profil/<?php echo $DATA['pacijent']->pacijent_id; ?>.jpg">
+                            <ul>
+                                <li><h6><?php
+                                        echo $DATA['pacijent']->ime;
+                                        echo '  ';
+                                        echo $DATA['pacijent']->prezime;
+                                        ?></h6></li>
+                                <li><h6><?php echo $DATA['pacijent']->datum_rodjenja; ?></h6></li>
+                                <li><h6><?php echo $DATA['pacijent']->jmbg; ?></h6></li>
+                                <li><h6><?php echo $DATA['pacijent']->email; ?></h6></li>
+                                <li><h6><?php echo $DATA['pacijent']->telefon; ?></h6></li>
+                                <li><h6>Alergije : <?php echo $DATA['pacijent']->alergije; ?></h6></li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card" id="dole">
+                <div class="card-header" role="tab" id="heading1">
+                    <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#col2" aria-expanded="true" aria-controls="col2">
+                            Istorija pacijenta
+                        </a>
+                    </h5>
+                </div>
+                <div id="col2" class="collapse" role="tabpanel" aria-labelledby="heading1">
+                    <div class="card-block">
+                        <div class="row">
+                            <table class="table">
+                                <tr>
+                                    <th>Zub</th>
+                                    <th>Datum</th> 
+                                    <th>Usluga</th>
+                                </tr>
+
+                                <?php
+                                if (is_array($DATA['istorija']))
+                                    foreach ($DATA['istorija'] as $ist):
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $ist->zub ?></td>
+                                            <td><?php echo $ist->vreme ?></td> 
+                                            <td><?php echo $ist->naziv ?></td>
+                                        </tr>
+                                    <?php endforeach; ?>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php require_once 'app/views/_global/afterContent.php'; ?>

@@ -11,9 +11,9 @@ class KategorijaController extends AdminController {
         $this->setData('kategorije', $listaKategorija);
     }
      /**
-     * Metod dodaj u Kategrija kontroleru koji poziba KAtegorijaModel injegovu funkciju dodaj.
+     * Metod dodaj u Kategrija kontroleru koji poziva KategorijaModel i njegovu funkciju dodaj.
      * Ovaj metod vrsi dodavanje nove kategorije u bazu. Pre nego sto se unesu vrednosti, proverava se da li su ispravne.
-     * Za validnost podataka se koristi funkcija prag match i regex. Takodje se posatavlja i naslov.
+     * Za validnost podataka se koristi funkcija preg match i regex. Takodje se posatavlja i naslov.
      */
 
     public function dodaj() {

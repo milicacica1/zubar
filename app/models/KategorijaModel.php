@@ -1,19 +1,20 @@
 <?php
 class KategorijaModel implements ModelInterface{
     /**
-     * 
-     * @return type
+     * Uzimaju se sve kategorije iz baze Kategorija
+     * @return array
      */
     public static function getAll() {
-        $SQL = 'SELECT * FROM kategorija ORDER BY kategorija_id;';
+        $SQL = 'SELECT * FROM kategorija;';
         $prep = DataBase::getInstance()->prepare($SQL);
         $prep->execute();
         return $prep->fetchAll(PDO::FETCH_OBJ);
     }
     /**
-     * 
+     * Metod koji vraca objekat sa podacima kategorije
+     * ciji kategorija_id je dat kao argument metode.
      * @param type $kategorija_id
-     * @return type
+     * @return stdClass/null
      */
     public static function getById($kategorija_id) {
         $kategorija_id = intval($kategorija_id);
@@ -24,9 +25,9 @@ class KategorijaModel implements ModelInterface{
     }
     
     /**
-     * 
-     * @param type $vrsta
-     * @return type
+     * Metod koji vrsi dodavanje zapisa kategorija u bazu podataka.
+     * @param varchar $vrsta
+     * @return type boolean
      */
     public static function dodaj($vrsta) {
         $SQL = 'INSERT INTO kategorija (vrsta) VALUES (?);';
@@ -35,9 +36,9 @@ class KategorijaModel implements ModelInterface{
     
     }
     /**
-     * 
-     * @param type $kategorija_id
-     * @return type
+     * MNetod koji vrsi brisanje zapisa kategorije iz baze podataka.
+     * @param int $kategorija_id
+     * @return boolean
      */
     public static function ukloni($kategorija_id){
         $kategorija_id = intval($kategorija_id);
@@ -47,10 +48,10 @@ class KategorijaModel implements ModelInterface{
         
     }
     /**
-     * 
-     * @param type $vrsta
-     * @param type $kategorija_id
-     * @return type
+     * Metod koji vrsi izmenu zapisa kategorije u abzi podataka.
+     * @param varchar $vrsta
+     * @param int $kategorija_id
+     * @return boolean
      */
     public static function izmeni($vrsta, $kategorija_id) {
         $pacijent_id = intval($pacijent_id);

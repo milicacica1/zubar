@@ -1,5 +1,4 @@
 <?php
-
 function __autoload($className) {
     if (in_array($className, ['Controller', 'AdminController', 'ModelInterface', 'DataBase', 'Misc', 'Session'])) {
         require_once 'sys/' . $className . '.php';

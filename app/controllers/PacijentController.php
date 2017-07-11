@@ -12,7 +12,11 @@ class PacijentController extends AdminController {
     }
     /**
      * Metod dodaj u Pacijent kontroleru iz forme uzima sve vresnosti.
-     * Proverava sve prosledjene vrednosti.
+     * Proverava sve prosledjene vrednosti. Svi podaci moraju iti ispravno uneti 
+     * kako bi se prosledili modelu pacijent. Proverava se i upload-ovana slika 
+     * kojoj se oddeljuje ekstenzija jpg. Slika mora biti dimenyije 150x150. 
+     * Ukoliko se selektuje slika drugih dimenyija pacijent nece biti unet u bazu.
+     *  Kada se izabere slika, premestice se u folder profil odakle se uzimaju sve slike za pacijente. 
      */
     public function dodaj() {
         $this->setData('naslov', 'Dodaj pacijenta');

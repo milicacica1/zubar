@@ -1,5 +1,9 @@
 <?php
 class UserModel implements ModelInterface {
+    /**
+     * Vraca sve zubare iz tabele zubar;
+     * @return array
+     */
     public static function getAll() {
         $SQL = 'SELECT * FROM zubar;';
         $prep = DataBase::getInstance()->prepare($SQL);
@@ -10,7 +14,11 @@ class UserModel implements ModelInterface {
             return [];
         }
     }
-
+    /**
+     * Metod koji vraca zubara sa id-jem prosledjenimkao argument funkcije.
+     * @param int $id
+     * @return stdClass/null
+     */
     public static function getById($id) {
         $SQL = 'SELECT * FROM zubar WHERE zubar_id = ?;';
         $prep = DataBase::getInstance()->prepare($SQL);
@@ -21,7 +29,12 @@ class UserModel implements ModelInterface {
             return null;
         }
     }
-
+    /**
+     * Ukoliko postoji korisnik sa zadatim login parametrima vratice se vrednost true.
+     * @param varchar $username
+     * @param char $passwordHash
+     * @return boolean
+     */
     public static function getByUsernameAndPasswordHash($username, $passwordHash) {
         $SQL = 'SELECT * FROM zubar WHERE `username` = ? AND `password` = ? AND active = 1;';
         $prep = DataBase::getInstance()->prepare($SQL);

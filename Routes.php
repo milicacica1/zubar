@@ -41,12 +41,6 @@
             'Method'     => 'index'
         ]
         ,
-//        [
-//            'Pattern'    => '|^intervencija/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'index'
-//        ]
-//        ,
         [
             'Pattern'    => '|^pacijent/dodaj/?$|',
             'Controller' => 'Pacijent',
@@ -62,13 +56,6 @@
             'Controller' => 'Pacijent',
             'Method'     => 'izmeni'
         ],
-//        [
-//            'Pattern'    => '|^zubi/([0-9]+)/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'zubi'
-//        ]
-//        ,
-        //pregled/izvrsi/
         [
             'Pattern'    => '|^pregled/([0-9]+)/?$|',
             'Controller' => 'Pregled',
@@ -159,23 +146,6 @@
             'Controller' => 'Kategorija',
             'Method'     => 'izmeni'
         ],
-//        ,
-//        [
-//            'Pattern'    => '|^pacijenti/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'index'
-//        ],
-        
-//        [
-//            'Pattern'    => '|^pacijenti/([0-9]+)/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'index'
-//        ],
-//        [
-//            'Pattern'    => '|^dodavanje/?$|',
-//            'Controller' => 'Sadrzaj',
-//            'Method'     => 'dodaj'
-//        ],
         
         [
             'Pattern'    => '|^.*$|',
