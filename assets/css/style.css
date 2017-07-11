@@ -531,14 +531,14 @@ button{
     margin-bottom: 50px;
 }
 .artcl{
-    background-color: red;
+    background-color: blue;
 }
 
 .adminlogin{
     color: #248FBD;
 }
 #tableheight{
-    height: 600px;
+    height: 1000px;
     width: 100%;
 }
 #tableheight2{
