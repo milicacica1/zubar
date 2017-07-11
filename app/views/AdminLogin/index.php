@@ -16,19 +16,19 @@
     </thead>
     <tbody>
         <?php
-        $temp = $DATA['pacijenti'];
+        $temp = $DATA['zubari'];
         if (is_array($temp))
-            foreach ($temp as $pacijent):
+            foreach ($temp as $zubar):
                 ?>
                 <tr>
                     <th scope="row">
-                        <?php echo htmlspecialchars($pacijent->ime); ?><br>
+                        <?php echo htmlspecialchars($zubar->ime); ?><br>
                     </th>
-                    <td class="text-center"><?php echo htmlspecialchars($pacijent->prezime); ?></td>
-                    <td class="text-center"><?php echo htmlspecialchars($pacijent->username); ?></td>
+                    <td class="text-center"><?php echo htmlspecialchars($zubar->prezime); ?></td>
+                    <td class="text-center"><?php echo htmlspecialchars($zubar->username); ?></td>
                     <td class="text-nowrap">
-                        <a href="<?php echo Configuration::BASE_URL; ?>admin/izmeni/<?php echo htmlspecialchars($pacijent->zubar_id); ?>" class="btn btn-warning">Izmeni</a>
-                        <a href="<?php echo Configuration::BASE_URL; ?>admin/ukloni/<?php echo htmlspecialchars($pacijent->zubar_id); ?>" class="btn btn-danger">Ukloni</a>
+                        <a href="<?php echo Configuration::BASE_URL; ?>admin/izmeni/<?php echo htmlspecialchars($zubar->zubar_id); ?>" class="btn btn-warning">Izmeni</a>
+                        <a href="<?php echo Configuration::BASE_URL; ?>admin/ukloni/<?php echo htmlspecialchars($zubar->zubar_id); ?>" class="btn btn-danger">Ukloni</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

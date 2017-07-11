@@ -1,20 +1,24 @@
 <?php
 
 class PacijentController extends AdminController {
-
+    /**
+     * Metod index u Pacijent kontroleru izlistava sve pacijente za zubara cija je sesija aktivna.
+     * Takodje postavlja naslov.
+     */
     public function index() {
         $this->setData('naslov', 'Kartoni');
-        $listaPacijenata = PacijentModel::getAll();
-        $this->setData('pacijent', $listaPacijenata);
         $pacijenti = PacijentModel::getByZubarId(Session::get('zubar_id'));
         $this->setData('pacijentitogzubara', $pacijenti);
     }
-
+    /**
+     * Metod dodaj u Pacijent kontroleru iz forme uzima sve vresnosti.
+     * Proverava sve prosledjene vrednosti. Svi podaci moraju iti ispravno uneti 
+     * kako bi se prosledili modelu pacijent. Proverava se i upload-ovana slika 
+     * kojoj se oddeljuje ekstenzija jpg. Slika mora biti dimenyije 150x150. 
+     * Ukoliko se selektuje slika drugih dimenyija pacijent nece biti unet u bazu.
+     *  Kada se izabere slika, premestice se u folder profil odakle se uzimaju sve slike za pacijente. 
+     */
     public function dodaj() {
-        $listaUsluga = PacijentModel::getAll();
-        $this->setData('usluge', $listaUsluga);
-        $listaKategorija = SadrzajModel::getCategory();
-        $this->setData('kategorija', $listaKategorija);
         $this->setData('naslov', 'Dodaj pacijenta');
 
         $w = false;
@@ -36,7 +40,6 @@ class PacijentController extends AdminController {
             if ($kategorija == 'odrasli' or $kategorija == 'dete' or $kategorija == 'penzioner' or $kategorija == 'student') {
                 $k = true;
             }
-
             $last_id = PacijentModel::getLastInsertID();
             $a = $last_id->AUTO_INCREMENT;
 
@@ -51,7 +54,6 @@ class PacijentController extends AdminController {
                 if ($height === 150) {
                     $h = true;
                 }
-
                 $file_name = $a . '.jpg';
             }
             $ext = pathinfo($file_name, PATHINFO_EXTENSION);
@@ -79,6 +81,11 @@ class PacijentController extends AdminController {
             }
         }
     }
+    /**
+     * Metod ukloni u Pacijent kontroleru koju brise kategoriju sa zadatim jedinstvenim parametrom uz pomoc funkcije ukloni
+     * u Pacijent modelu. Takodje i posatavlja naslov.
+     * @param int $pacijent_id
+     */
 
     public function ukloni($pacijent_id) {
         $pacijent = PacijentModel::getById($pacijent_id);
@@ -97,6 +104,12 @@ class PacijentController extends AdminController {
             }
         }
     }
+    /**
+     * Metod izmeni uzima vrednosti iz forme unosi nove, izmenjene podatke u tabelu.
+     * Izmena se vrsi pozivanjem funkcije izmeni u Pacijent modelu. Izmenice se samo pacijent
+     * i sve ostala njegova polja sa zadatim jedinstvenim parametrom. Takodje ovaj metod postavlja naslov. 
+     * @param int $pacijent_id
+     */
 
     public function izmeni($pacijent_id) {
         $pacijent = PacijentModel::getById($pacijent_id);

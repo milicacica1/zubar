@@ -24,7 +24,7 @@
                                 <input type="password" name="password" id="key" class="form-control" placeholder="Lozinka" required pattern="^.{6,}$">
                             </div>
                             <?php if (isset($DATA['message'])): ?>
-                                <h5 class="mb-4"><?php echo htmlspecialchars($DATA['message']); ?></h5>
+                                <h5 class="mb-4 message"><?php echo htmlspecialchars($DATA['message']); ?></h5>
                             <?php endif; ?>
                             <button type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="prijava">Prijavi se</button>
                         </form>
@@ -52,8 +52,8 @@
                                 <input type="email" name="recovery-email" id="recovery-email" class="form-control" required autocomplete="off" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$">
                             </div>
                             <div  class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
-                            <button type="submit" class="btn btn-custom" data-dismiss="modal">Pošalji</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+                                <button type="submit" class="btn btn-custom" data-dismiss="modal">Pošalji</button>
                             </div>
                         </form>
                     </div>

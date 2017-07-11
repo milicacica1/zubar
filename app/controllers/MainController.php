@@ -1,7 +1,18 @@
 <?php
 
 class MainController extends Controller {
-
+    /**
+     * Metod login u Main kontroleru, koji ukoliko POST nije prazan vrednosti iz inputa
+     *  pod nazivom username i password. Te vrednosti se proveravaju, 
+     * koristeci funkciju prag match i odgovarajuce regularne izraze. 
+     * U ovom metodu se hesuje lozinka uz pomoc funkcije hash koristeci 
+     * sigunrnosni algoritam za hesovanje sha512. 
+     * Proverava se da li korisnik sa tim korisnickim imenom i lozinkom postoji u bazi. 
+     * Promenljiva $user vraca vrednost true ili false. Ukoliko je vrednosti true, 
+     * postavice se nova sesija za kljucem zubar_id. 
+     * I vrednoscu jeidnstvenog parametra za tog korisnika tj zubara. 
+     * Kosisnik se onda preusmerava na pocetnu stranu za zubara tj na stranicu usluge.
+     */
     public function login() {
         if (!empty($_POST)) {
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -29,12 +40,12 @@ class MainController extends Controller {
                     
                 } else {
                     $this->setData('message', 'Nisu dobri login parametri.');
-                    $neuspela = UspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
+                    $neuspela = NeuspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
                     sleep(1);
                 }
             } else {
                 $this->setData('message', 'Nisu dobri login parametri.');
-                $neuspela = UspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
+                $neuspela = NeuspelaPrijavaModel::addNeuspela(date("Y-m-d H:i:s"), $username);
                 sleep(1);
             }
         }

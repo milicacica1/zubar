@@ -41,12 +41,6 @@
             'Method'     => 'index'
         ]
         ,
-//        [
-//            'Pattern'    => '|^intervencija/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'index'
-//        ]
-//        ,
         [
             'Pattern'    => '|^pacijent/dodaj/?$|',
             'Controller' => 'Pacijent',
@@ -62,16 +56,34 @@
             'Controller' => 'Pacijent',
             'Method'     => 'izmeni'
         ],
-//        [
-//            'Pattern'    => '|^zubi/([0-9]+)/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'zubi'
-//        ]
-//        ,
         [
             'Pattern'    => '|^pregled/([0-9]+)/?$|',
             'Controller' => 'Pregled',
             'Method'     => 'pregledajPacijenta'
+        ]
+        ,
+        [
+            'Pattern'    => '|^izvrsi/([0-9]+)/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'izvrsi'
+        ]
+        ,
+        [
+            'Pattern'    => '|^izvrsi/racun/([0-9]+)/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'racun'
+        ]
+        ,
+        [
+            'Pattern'    => '|^intervencije/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'intervencije'
+        ]
+        ,
+        [
+            'Pattern'    => '|^pregled/racun/ukloni/([0-9]+)/?$|',
+            'Controller' => 'Pregled',
+            'Method'     => 'ukloni'
         ]
         ,
         [
@@ -134,23 +146,6 @@
             'Controller' => 'Kategorija',
             'Method'     => 'izmeni'
         ],
-//        ,
-//        [
-//            'Pattern'    => '|^pacijenti/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'index'
-//        ],
-        
-//        [
-//            'Pattern'    => '|^pacijenti/([0-9]+)/?$|',
-//            'Controller' => 'Pregled',
-//            'Method'     => 'index'
-//        ],
-//        [
-//            'Pattern'    => '|^dodavanje/?$|',
-//            'Controller' => 'Sadrzaj',
-//            'Method'     => 'dodaj'
-//        ],
         
         [
             'Pattern'    => '|^.*$|',

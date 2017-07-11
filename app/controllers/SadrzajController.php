@@ -1,35 +1,42 @@
 <?php
 
 class SadrzajController extends AdminController {
-
+    /**
+     * Metod index u Sadrzaj kontroleru koji prikazuje sve usluge koje postoje u ovoj zubarskoj ordinaciji. 
+     * Sadrzaj model poziva funkciju getAll kako bi uzeo sve usluge.
+     * Takodje se postavlja i naslov.
+     */
     public function index() {
-
         $this->setData('naslov', 'Usluge');
-
         $listaUsluga = SadrzajModel::getAll();
         $this->setData('usluge', $listaUsluga);
-
-        $listaKategorija = SadrzajModel::getCategory();
+        $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorija', $listaKategorija);
     }
+    /**
+     * Metod index u Sadrzaj kontroleru koji prikazuje sve usluge koje postoje u ovoj zubarskoj ordinaciji. 
+     * Sadrzaj model poziva funkciju getAll kako bi uzeo sve usluge.
+     * Takodje se postavlja i naslov.
+     */
 
     public function prikaziPoKategoriji($kategorija_id) {
-        $naslov = SadrzajModel::getCategoryNameById($kategorija_id);
-
+        $naslov = KategorijaModel::getById($kategorija_id);
         $this->setData('naslov', $naslov->vrsta);
-        $temp = 1;
-        $default = SadrzajModel::getByCategoryId($temp);
-        $this->setData('default', $default);
         $listaUslugaPoKateoriji = SadrzajModel::getByCategoryId($kategorija_id);
         $this->setData('uslugepokategoriji', $listaUslugaPoKateoriji);
-        $listaKategorija = SadrzajModel::getCategory();
+        $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorija', $listaKategorija);
     }
+    /**
+     * Metod dodaj u Sadrzaj kontroleru koji poziva KategorijaModel i njegovu funkciju dodaj.
+     * Ovaj metod vrsi dodavanje nove usluge u bazu. Pre nego sto se unesu vrednosti, proverava se da li su ispravne.
+     * Za validnost podataka se koristi funkcija preg match i regex. Takodje se posatavlja i naslov.
+     */
 
     public function dodaj() {
         $listaUsluga = SadrzajModel::getAll();
         $this->setData('usluge', $listaUsluga);
-        $listaKategorija = SadrzajModel::getCategory();
+        $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorija', $listaKategorija);
         $this->setData('naslov', 'Dodaj uslugu');
         if ($_POST) {
@@ -60,11 +67,16 @@ class SadrzajController extends AdminController {
             }
         }
     }
-
+    /**
+     * Metod izmeni uzima vrednosti iz forme i unosi nove, izmenjene podatke u tabelu.
+     * Izmena se vrsi pozivanjem funkcije izmeni u Sadrzaj modelu. Izmenice se samo usluge
+     * sa zadatim jedinstvenim parametrom. Takodje ovaj metod postavlja naslov. 
+     * @param int $usluga_id
+     */
     public function izmeni($usluga_id) {
         $listaUsluga = SadrzajModel::getById($usluga_id);
         $this->setData('usluge', $listaUsluga);
-        $listaKategorija = SadrzajModel::getCategory();
+        $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorija', $listaKategorija);
         $this->setData('naslov', 'Izmena usluge');
         if ($_POST) {
@@ -92,11 +104,16 @@ class SadrzajController extends AdminController {
            
         }
     }
+    /**
+     * Metod ukloni u Sadrzaj kontroleru koji brise uslugu sa zadatim jedinstvenim parametrom uz pomoc funkcije ukloni
+     * u Sadrzaj modelu. Takodje i posatavlja naslov.
+     * @param int $usluga_id
+     */
 
     public function ukloni($usluga_id) {
         $listaUsluga = SadrzajModel::getById($usluga_id);
         $this->setData('usluge', $listaUsluga);
-        $listaKategorija = SadrzajModel::getCategory();
+        $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorija', $listaKategorija);
         $this->setData('naslov', 'Ukloni uslugu');
 
@@ -104,10 +121,10 @@ class SadrzajController extends AdminController {
             $confirmed = filter_input(INPUT_POST, 'confirmed', FILTER_SANITIZE_NUMBER_INT);
             if ($confirmed == 1) {
                 $res = SadrzajModel::ukloni($usluga_id);
-                if ($res) {
-                    Misc::redirect('usluge/');
+                if ($res == true) {
+                    Misc::redirect('usluge');
                 } else {
-                    $this->setData('poruka', "Usluga je uklonjena!");
+                    $this->setData('poruka', "Usluga nije uklonjena!");
                 }
             }
         }

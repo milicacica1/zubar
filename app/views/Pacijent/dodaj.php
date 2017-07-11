@@ -1,5 +1,29 @@
 <?php require_once './app/views/_global/beforeContent.php'; ?>
 
+
+<li class="nav-item">
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>usluge/"><h6>Uređivanje sadržaja</h6><span class="sr-only">(current)</span></a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>pacijenti/" id="active2"><h6>Elektronski kartoni pacijenata</h6><span class="sr-only">(current)</span></a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" href="<?php echo Configuration::BASE_URL ?>intervencije/"><h6>Pogledaj sve intervencije</h6><span class="sr-only">(current)</span></a>
+</li>
+
+</ul>
+
+
+<a class="btn btn-outline-danger " href="<?php echo Configuration::BASE_URL; ?>logout/" id="odjava"><span class="align-bottom">Odjava sa sistema</span></a>
+
+
+</div>
+</nav>
+</div>
+</header>
+<main class="container">
+    <div class="row">
 <article class="container">
     <h2>Dodavanje novog pacijenta</h2>
     <form method="post" action="<?php echo Configuration::BASE_URL; ?>pacijent/dodaj/" id="form1"  enctype="multipart/form-data">
@@ -9,7 +33,7 @@
                 <input type="text" name="ime" id="f1_ime" required class="form-control" pattern="[A-Z][a-z]+" title="Ime pacijenta mora početi veliki slovom!">
             </div>
         </div>
-        <div class="form-group row"">
+        <div class="form-group row">
             <label class="col-2 col-form-label">Prezime:</label>
             <div class="col-10">
                 <input type="text" name="prezime" id="f1_prezime" required class="form-control"  pattern="[A-Z][a-z]+(-[A-Z][a-z]+)*" title="Prezime pacijenta mora početi veliki slovom!">
@@ -62,6 +86,7 @@
         </div>
 
         <button type="submit" class="btn btn-success">Dodajte pacijenta</button>
+        <a href = "<?php echo Configuration::BASE_URL;?>pacijenti/" class="btn btn-warning">Odustani</a>
     </form>
     <?php if (isset($DATA['poruka'])): ?>
         <p><?php echo htmlspecialchars($DATA['poruka']); ?></p>   

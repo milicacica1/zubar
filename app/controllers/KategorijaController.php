@@ -1,11 +1,20 @@
 <?php
 
 class KategorijaController extends AdminController {
+    /**
+     * Metod index u Kategrija kontroleru koji prikazuje sve kategorije iz baze pozivajui KategorijaModel 
+     * i njegov u funkciju getAll. Takodje se posatavlja i naslov.
+     */
     public function index() {
         $this->setData('naslov', 'Kategorije');
         $listaKategorija = KategorijaModel::getAll();
         $this->setData('kategorije', $listaKategorija);
     }
+     /**
+     * Metod dodaj u Kategrija kontroleru koji poziva KategorijaModel i njegovu funkciju dodaj.
+     * Ovaj metod vrsi dodavanje nove kategorije u bazu. Pre nego sto se unesu vrednosti, proverava se da li su ispravne.
+     * Za validnost podataka se koristi funkcija preg match i regex. Takodje se posatavlja i naslov.
+     */
 
     public function dodaj() {
         $listaKategorija = KategorijaModel::getAll();
@@ -29,6 +38,11 @@ class KategorijaController extends AdminController {
             }
         }
     }
+    /**
+     * Metod ukloni u Kategorija kontroleru koju brise kategoriju sa zadatim jedinstvenim parametrom uz pomoc funkcije ukloni
+     * u Kategorija modelu. Takodje i posatavlja naslov.
+     * @param int $kategorija_id
+     */
 
     public function ukloni($kategorija_id) {
         $kategorija = KategorijaModel::getById($kategorija_id);
@@ -47,6 +61,12 @@ class KategorijaController extends AdminController {
             }
         }
     }
+    /**
+     * Metod izmeni uzima vrednosti iz forme pod nazivom kategorija i unosi nove, izmenjene podatke u tabelu.
+     * Izmena se vrsi pozivanjem funkcije izmeni u Kategorija modelu. Izmenice se samo kategorija
+     * sa zadatim jedinstvenim parametrom. Takodje ovaj metod postavlja naslov. 
+     * @param int $kategorija_id
+     */
 
     public function izmeni($kategorija_id) {
         $kategorija = KategorijaModel::getById($kategorija_id);

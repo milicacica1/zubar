@@ -49,7 +49,7 @@ a{
 .jumbotron{
     background: url("../img/pozadina3.jpg") no-repeat;
     background-size: cover;
-    height: 300px;
+    height: 250px;
     background-attachment: fixed;
     width:100%;
     border-radius: 0px;
@@ -113,7 +113,7 @@ a{
     color: #248FBD;
 }
 #accordion{
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
 #accordion2{
     margin-bottom: 50px;
@@ -516,7 +516,9 @@ a{
     text-align: right;
 }
 #dole{
-    margin-bottom: 180px;
+
+    margin-bottom: 50px;
+
 }
 .goree{
 
@@ -540,4 +542,40 @@ button{
 #tableheight{
     height: 1000px;
     width: 100%;
+}
+#tableheight2{
+    height: 1000px;
+    width: 100%;
+}
+.bord{
+    border: solid 5px; 
+    border-color: #248FBD;
+        
+}
+.space{
+    margin-right: 5px;
+}
+.message{
+    color: red;
+}
+.stil{
+    background-color: #248FBD;
+    color: white;
+}
+.custom-control-indicator{
+    color: #248FBD;
+}
+#active3:active{
+    background-color: #248FBD;
+    border-color: #248FBD;
+    color: #fff;
+}
+.active2{
+    background-color: #248FBD;
+    border-color: #248FBD;
+    border: 3px solid;
+    color: #fff;
+}
+.velia{
+    font-size: 25px;
 }
