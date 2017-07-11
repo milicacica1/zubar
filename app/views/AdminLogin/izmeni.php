@@ -1,7 +1,7 @@
 <?php require_once './app/views/_global/adminBeforeContent.php'; ?>
 
 
-<article class="container">
+<article class="container" id="ukloni">
     <h2>Izmena podataka o zubaru</h2>
     <form method="post" action="<?php echo Configuration::BASE_URL; ?>admin/izmeni/<?php echo $DATA['zubar']->zubar_id ?>" id='form1'>
         <div class="form-group row">

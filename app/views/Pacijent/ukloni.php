@@ -23,7 +23,7 @@
 </header>
 <main class="container">
     <div class="row">
-        <article class="col-12 text-center">
+        <article class="col-12 text-center" id="ukloni">
             <header>
                 <h3 class="mb-5">Da li želite da uklonite pacijenta "<?php echo htmlspecialchars($DATA['pacijent']->ime);
 echo ' ';

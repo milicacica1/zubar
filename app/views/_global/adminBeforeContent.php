@@ -19,13 +19,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL; ?>admin/" id="active2"><h5>Zubari</h5><span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="<?php echo Configuration::BASE_URL; ?>admin/" id="active2"><h5>Zubari</h5><span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL; ?>admin/uspele"><h5>Uspesne prijave</h5><span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="<?php echo Configuration::BASE_URL; ?>admin/uspele"><h5>Uspesne prijave</h5><span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a aria-pressed="true" class="nav-link" href="<?php echo Configuration::BASE_URL; ?>admin/neuspele"><h5>Neuspesne prijave</h5><span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="<?php echo Configuration::BASE_URL; ?>admin/neuspele"><h5>Neuspesne prijave</h5><span class="sr-only">(current)</span></a>
                             </li>
 
                         </ul>

@@ -12,6 +12,7 @@
             <th class="text-center">Ime</th>
             <th class="text-center">Prezime</th>
             <th class="text-center">Username</th>
+            <th class="text-center"></th>
         </tr>
     </thead>
     <tbody>

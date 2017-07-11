@@ -1,6 +1,6 @@
 <?php require_once './app/views/_global/adminBeforeContent.php'; ?>
 
-<article class="col-12 text-center">
+<article class="col-12 text-center" id="ukloni">
     <header>
         <h3 class="mb-5">Da li želite da uklonite zubara "<?php echo htmlspecialchars($DATA['zubar']->ime);  echo ' '; echo htmlspecialchars($DATA['zubar']->prezime); echo '" sa username-om: "'; echo htmlspecialchars($DATA['zubar']->username);?>"?</h3>
     </header>
