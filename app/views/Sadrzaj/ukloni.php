@@ -22,7 +22,7 @@
 </nav>
 </div>
 </header>
-<main class="container">
+<main class="container" id="ukloni">
     <div class="row">
         <article class="col-12 text-center">
             <header>

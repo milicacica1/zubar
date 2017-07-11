@@ -20,7 +20,7 @@
 </header>
 <main class="container">
     <div class="row">
-        <article class="container">
+        <article class="container" id="ukloni">
             <h2>Dodavanje nove kategorije usluga</h2>
             <form method="post" action="<?php echo Configuration::BASE_URL; ?>kategorija/dodaj/" id='form1'>
                 <div class="form-group row">
