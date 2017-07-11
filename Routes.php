@@ -81,12 +81,6 @@
         ]
         ,
         [
-            'Pattern'    => '|^pregled/racun/ukloni/([0-9]+)/?$|',
-            'Controller' => 'Pregled',
-            'Method'     => 'ukloni'
-        ]
-        ,
-        [
             'Pattern'    => '|^admin/?$|',
             'Controller' => 'AdminLogin',
             'Method'     => 'index'

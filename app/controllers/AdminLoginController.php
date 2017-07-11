@@ -54,7 +54,7 @@ class AdminLoginController extends AdminController {
             $prezime = filter_input(INPUT_POST, 'prezime', FILTER_SANITIZE_STRING);
             $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
             $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
-
+            
             if (preg_match('/^[a-z]{4,}$/', $username) and preg_match('/^.{6,}$/', $password)
                     and preg_match('/^[A-Z][a-z]+/', $ime)
                     and preg_match('/^[A-Z][a-z]+(-[A-Z][a-z]+)*/', $prezime)) {
@@ -69,8 +69,6 @@ class AdminLoginController extends AdminController {
             } else {
                 $this->setData('poruka', 'Nisu uneti ispravni podaci.');
             }
-        } else {
-            $this->setData('poruka', 'Nisu uneti ispravni podaci.');
         }
     }
     /**
